@@ -1,5 +1,6 @@
 {
     "appId": "com.electron.app",
+    "asar": true,
     "directories": {
         "output": "dist"
     },
@@ -18,13 +19,13 @@
     },
     "files": [
         {
-            "from": "build/main",
-            "to": "main",
+            "from": "src/renderer",
+            "to": "renderer",
             "filter": ["**/*"]
         },
         {
-            "from": "build/renderer",
-            "to": "renderer",
+            "from": "build/main",
+            "to": "main",
             "filter": ["**/*"]
         },
         {
@@ -32,8 +33,8 @@
             "to": "static",
             "filter": ["**/*"]
         },
-	"!build",
-	"!dist",
-	"!scripts"
+        "!build",
+        "!dist",
+        "!scripts"
     ]
 }

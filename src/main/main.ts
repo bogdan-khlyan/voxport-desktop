@@ -9,6 +9,8 @@ function createWindow () {
       preload: join(__dirname, 'preload.js'),
       nodeIntegration: false,
       contextIsolation: true,
+      sandbox: false, // Можно временно отключить безопасность для отладки
+      webSecurity: false // Временно для отладки
     }
   });
 
@@ -40,19 +42,20 @@ app.whenReady().then(() => {
     callback({
       responseHeaders: {
         ...details.responseHeaders,
-        'Content-Security-Policy': "" // Отключаем CSP
-
-        // 'Content-Security-Policy': [
-        //   "default-src 'self'; " +
-        //   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://jitsi.mc.devserver.host http://localhost; " +
-        //   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
-        //   "font-src 'self' https://fonts.gstatic.com; " +
-        //   "connect-src 'self' ws://localhost:1337 http://localhost:1337; " + // Добавляем ws:// для WebSocket
-        //   "frame-src 'self' https://jitsi.mc.devserver.host;" // Разрешаем загрузку фреймов с jitsi.mc.devserver.host
-        // ]
+        'Content-Security-Policy': [
+          "default-src 'self'; " +
+          "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://jitsi.mc.devserver.host http://localhost; " +
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+          "font-src 'self' https://fonts.gstatic.com; " +
+          "connect-src 'self' https://admin.voxport.devserver.host https://jitsi.mc.devserver.host wss://jitsi.mc.devserver.host; " +
+          "frame-src 'self' https://jitsi.mc.devserver.host; " +
+          "img-src 'self' data: https://jitsi.mc.devserver.host; " +
+          "worker-src 'self' blob: https://jitsi.mc.devserver.host;" // Добавляем worker-src для blob URL
+        ]
       }
     });
   });
+
 
 
 
