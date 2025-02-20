@@ -1,30 +1,36 @@
 {
-  "name": "electron-vue-template",
-  "version": "0.1.0",
-  "description": "A minimal Electron + Vue application",
-  "main": "main/main.js",
+  "name": "electron-forge-vite-vue-template",
+  "productName": "electron-forge-vite-vue-template",
+  "version": "1.0.0",
+  "description": "Mini template for electron-forge combine with vite and vue3.",
+  "main": ".vite/build/main.js",
   "scripts": {
-    "dev": "node scripts/dev-server.js",
-    "build": "node scripts/build.js && electron-builder",
-    "build:win": "node scripts/build.js && electron-builder --win",
-    "build:mac": "node scripts/build.js && electron-builder --mac",
-    "build:linux": "node scripts/build.js && electron-builder --linux"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
-  "repository": "https://github.com/deluze/electron-vue-template",
+  "keywords": [],
   "author": {
-    "name": "Deluze",
-    "url": "https://github.com/Deluze"
+    "name": "taojiacheng",
+    "email": "swkzymlyy@gmail.com"
   },
+  "license": "MIT",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.4.1",
-    "chalk": "^4.1.2",
-    "chokidar": "^3.5.3",
-    "electron": "^32.1.2",
-    "electron-builder": "^25.1.6",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "@electron-forge/plugin-vite": "^6.1.1",
+    "electron": "24.2.0",
+    "vite": "^6.1.1",
+    "vite-plugin-copy": "^0.1.6"
   },
   "dependencies": {
-    "vue": "^3.3.8"
+    "electron-squirrel-startup": "^1.0.0",
+    "vite-plugin-static-copy": "^2.2.0",
+    "vue": "^3.2.47"
   }
 }
