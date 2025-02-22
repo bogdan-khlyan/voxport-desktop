@@ -1,5 +1,6 @@
 module.exports = {
   packagerConfig: {
+    executableName: 'voxport', // Укажите имя exe файла
     ignore: [
       'node_modules',
         '.temp',
@@ -12,16 +13,13 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      platforms: ['win32'],  // Указываем платформу для Windows
+      platforms: ['win32'],
       config: {
-        // Для создания .exe инсталлятора
-        name: 'voxport',
-        authors: 'Bogdan Khlyan',  // Здесь укажите автора или организацию
-        // icon: './path/to/icon.ico',  // Укажите путь к .ico иконке для установщика
-        // setupIcon: './path/to/icon.ico',  // Можно указать иконку для установщика
-        exe: 'voxport.exe',  // Указываем имя конечного .exe файла
-        noMsi: true,  // Отключение MSI инсталлятора
-        setupExe: 'voxport-installer.exe',  // Указание имени установщика
+        name: 'voxport',           // имя вашего приложения
+        authors: 'Bogdan Khlyan',   // автор
+        exe: 'voxport.exe',         // имя .exe файла (оно должно совпадать с именем собранного исполнимого файла)
+        setupExe: 'voxport-installer.exe', // имя установщика
+        noMsi: true,                // отключение MSI установщика
       },
     },
     {
