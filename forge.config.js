@@ -12,7 +12,17 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      platforms: ['win32'],  // Указываем платформу для Windows
+      config: {
+        // Для создания .exe инсталлятора
+        name: 'voxport',
+        authors: 'Bogdan Khlyan',  // Здесь укажите автора или организацию
+        // icon: './path/to/icon.ico',  // Укажите путь к .ico иконке для установщика
+        // setupIcon: './path/to/icon.ico',  // Можно указать иконку для установщика
+        exe: 'voxport.exe',  // Указываем имя конечного .exe файла
+        noMsi: true,  // Отключение MSI инсталлятора
+        setupExe: 'voxport-installer.exe',  // Указание имени установщика
+      },
     },
     {
       name: '@electron-forge/maker-zip',

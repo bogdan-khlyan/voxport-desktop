@@ -1,7 +1,7 @@
 {
   "name": "voxport-desktop",
   "productName": "voxport-desktop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Voxport",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.1.1",
     "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.1.1",
     "@electron-forge/plugin-vite": "^6.1.1",
     "electron": "24.2.0",
@@ -31,6 +31,7 @@
   "dependencies": {
     "@electron-forge/maker-dmg": "^7.7.0",
     "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^6.3.9",
     "vite-plugin-static-copy": "^2.2.0",
     "vue": "^3.2.47"
   }
