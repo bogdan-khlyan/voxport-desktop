@@ -1,8 +1,8 @@
 {
-  "name": "electron-forge-vite-vue-template",
-  "productName": "electron-forge-vite-vue-template",
-  "version": "1.0.0",
-  "description": "Mini template for electron-forge combine with vite and vue3.",
+  "name": "voxport-desktop",
+  "productName": "voxport-desktop",
+  "version": "0.0.1",
+  "description": "Voxport",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +13,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "taojiacheng",
-    "email": "swkzymlyy@gmail.com"
+    "name": "bogdak-khlyan",
+    "email": "es.bogdan.hlyan@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {
@@ -29,6 +29,7 @@
     "vite-plugin-copy": "^0.1.6"
   },
   "dependencies": {
+    "@electron-forge/maker-dmg": "^7.7.0",
     "electron-squirrel-startup": "^1.0.0",
     "vite-plugin-static-copy": "^2.2.0",
     "vue": "^3.2.47"

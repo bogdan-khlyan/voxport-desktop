@@ -1,5 +1,13 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    ignore: [
+      'node_modules',
+        '.temp',
+        '.idea',
+        'public',
+        'src'
+    ],
+  },
   rebuildConfig: {},
   makers: [
     {
@@ -17,6 +25,15 @@ module.exports = {
     {
       name: '@electron-forge/maker-rpm',
       config: {},
+    },
+    // Добавляем maker для DMG
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        // Здесь можно указать дополнительные параметры конфигурации, если нужно
+        overwrite: true,  // Если хотите перезаписывать DMG, если файл уже существует
+        title: 'voxport',  // Здесь укажите короткое имя
+      },
     },
   ],
   plugins: [
